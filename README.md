@@ -17,27 +17,7 @@ Este projeto é um **gerenciador de tarefas** desenvolvido em **Angular**, com s
 - **Serviços**: Comunicação simulada/local para manipulação de dados.
 - **Estrutura de Componentes**:
 
-src/app
-├── components/
-│ ├── header/
-├
-├─ features/tasks/
-├── components/
-│ ├── table/
-│ ├── tasks-cards/
-│ ├── tasks-form/
-│ ├── task-cards-view/
-│ ├── tasks-list/
-├
-├── services/
-│ └── tasks.service.ts
-├
-├── validators/
-│ └── date.validator.ts
-├
-├── task.model.ts/
-├── tasks-routing.module.ts/
-├── tasks.module.ts/
+![alt text](estruturas.png)
 ---
 
 ## ⚙️ Funcionalidades
