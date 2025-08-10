@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>
+  Criar Tarefa
+  <button mat-icon-button aria-label="Fechar" (click)="onClose()" style="float: right;">
+    <mat-icon>close</mat-icon>
+  </button>
+</h2>
+
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-form">
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Título</mat-label>
+    <input matInput formControlName="title" placeholder="Digite o título da tarefa" />
+    <mat-error *ngIf="f['title'].hasError('required')">Título é obrigatório.</mat-error>
+    <mat-error *ngIf="f['title'].hasError('minlength')">Mínimo 3 caracteres.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Descrição</mat-label>
+    <textarea matInput formControlName="description" rows="4" placeholder="Descreva a tarefa"></textarea>
+    <mat-error *ngIf="f['description'].hasError('required')">Descrição é obrigatória.</mat-error>
+    <mat-error *ngIf="f['description'].hasError('minlength')">Mínimo 5 caracteres.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Data de Vencimento</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dueDate" placeholder="Selecione a data" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="f['dueDate'].hasError('required')">Data é obrigatória.</mat-error>
+    <mat-error *ngIf="f['dueDate'].hasError('dateBeforeToday')">Data não pode ser antes de hoje.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="status">
+      <mat-option value="pendente">Pendente</mat-option>
+      <mat-option value="concluída">Concluída</mat-option>
+    </mat-select>
+    <mat-error *ngIf="f['status'].hasError('required')">Status é obrigatório.</mat-error>
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">
+      Salvar
+    </button>
+  </div>
+</form>

@@ -1,0 +1,40 @@
+<div class="cards-container content-container">
+  <div 
+    class="task-card" 
+    [ngClass]="{'concluida': task.status === 'concluída', 'pendente': task.status === 'pendente'}" 
+    *ngFor="let task of tasks"
+  >
+    <div class="card-header">
+      <h3><strong>{{ task.title }}</strong></h3>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="edit.emit(task)">
+          <mat-icon>edit</mat-icon>
+          Editar
+        </button>
+        <button mat-menu-item (click)="delete.emit(task.id)">
+          <mat-icon>delete</mat-icon>
+          Excluir
+        </button>
+      </mat-menu>
+    </div>
+    
+    <div>
+      <hr style="border: 1px solid rgba(0, 0, 0, 0.678);">
+      <p>{{ task.description }}</p>
+    </div>
+
+    <div class="card-footer">
+      <small><strong>Venc.:</strong> {{ task.dueDate | date:'dd/MM/yyyy' }}</small>
+      <mat-checkbox
+        [checked]="task.status === 'concluída'"
+        (change)="toggleStatus(task)"
+        color="primary"
+      >
+        {{ task.status }}
+      </mat-checkbox>
+    </div>
+  </div>
+</div>

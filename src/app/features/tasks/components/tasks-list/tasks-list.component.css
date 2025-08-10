@@ -1,0 +1,12 @@
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* até 3 por linha */
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .cards-wrapper { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .cards-wrapper { grid-template-columns: 1fr; }
+}

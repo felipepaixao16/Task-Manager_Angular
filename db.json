@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "id": "2",
+      "title": "Arrumar as malas",
+      "description": "Levar o essencial e a ferramenta de trabalho",
+      "status": "concluída",
+      "dueDate": "2025-08-19T03:00:00.000Z"
+    },
+    {
+      "id": "0935",
+      "title": "Fazer compras",
+      "description": "Não esquecer do arroz, das verduras e de uma vassoura.",
+      "status": "pendente",
+      "dueDate": "2025-08-16T03:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Ir no mecânico",
+      "description": "Levar a peça original para ser trocada e pedir a substituição das pastilhas de freio.",
+      "status": "concluída",
+      "dueDate": "2025-08-30T00:00:00.000Z"
+    },
+    {
+      "id": "9",
+      "title": "Preparar a janta",
+      "description": "Fazer macarronada com molho branco e comprar um vinho suave.",
+      "status": "pendente",
+      "dueDate": "2025-08-19T03:00:00.000Z"
+    },
+    {
+      "id": "91",
+      "title": "Corrigir tarefa",
+      "description": "Amanhã depois da Ceia corrigir tarefa bugs do sistema da empresa.",
+      "status": "concluída",
+      "dueDate": "2025-08-15T03:00:00.000Z"
+    }
+  ]
+}

@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.content-container {
+  width: 75vw;             
+  margin: 5vh auto 0 auto;
+  min-height: calc(75vh - 5vh); 
+  box-sizing: border-box;
+}
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-mdc-form-field {
+    display: block !important;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+h2[mat-dialog-title] button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.full-width {
+  padding: 0 1rem 0 1rem;
+}

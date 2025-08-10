@@ -1,0 +1,41 @@
+.content-container {
+  overflow-x: auto; 
+}
+
+.full-width-table {
+  width: 100%;
+  min-width: 600px; 
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    width: 100%;
+  }
+
+  .full-width-table th,
+  .full-width-table td {
+    padding: 8px;
+    font-size: 0.85rem;
+    white-space: nowrap; 
+  }
+
+  mat-form-field {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container {
+    width: 100%;
+  }
+  
+  .full-width-table th,
+  .full-width-table td {
+    padding: 6px;
+    font-size: 0.75rem;
+  }
+
+  .mat-icon {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,8 @@
+/* Centraliza o título do modal */
+mat-dialog-title, h2[mat-dialog-title] {
+  text-align: center;
+  position: relative;
+  margin: 0;
+}
+
+/* Ajusta o botão de fechar para continuar no canto direito */

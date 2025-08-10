@@ -1,0 +1,25 @@
+<div class="view-toggle-container" style="display: flex; justify-content: space-between; align-items: center; margin: 1rem;">
+  <div class="view-toggle">
+    <button mat-button (click)="viewMode = 'table'" [disabled]="viewMode === 'table'">Tabela</button>
+    <button mat-button (click)="viewMode = 'cards'" [disabled]="viewMode === 'cards'">Cards</button>
+  </div>
+  <button mat-raised-button color="primary" (click)="openCreateTaskModal()">
+    Criar Tarefa
+  </button>
+</div>
+
+<app-table
+  *ngIf="viewMode === 'table'"
+  [tasks]="tasks"
+  (edit)="editTask($event)"
+  (delete)="deleteTask($event)"
+  (statusChange)="toggleStatus($event)"
+></app-table>
+
+<app-tasks-cards-view
+  *ngIf="viewMode === 'cards'"
+  [tasks]="tasks"
+  (edit)="editTask($event)"
+  (delete)="deleteTask($event)"
+  (statusChange)="toggleStatus($event)"
+></app-tasks-cards-view>

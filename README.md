@@ -1,27 +1,74 @@
-# TaskManager
+# Task Manager - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+## 📋 Visão Geral
+Este projeto é um **gerenciador de tarefas** desenvolvido em **Angular**, com suporte para **visualização em cards** e **tabela responsiva**, permitindo:
+- Criar, editar e excluir tarefas.
+- Alterar status (`pendente` / `concluída`) via **checkbox**.
+- Filtrar e ordenar tarefas.
+- Paginação de dados.
+- Interface responsiva.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🏗 Arquitetura
+- **Frontend**: Angular 15+ com Angular Material.
+- **Design System**: Angular Material + estilos customizados em SCSS.
+- **Gerenciamento de Estado**: Local (via `@Input` / `@Output`), sem store global.
+- **Serviços**: Comunicação simulada/local para manipulação de dados.
+- **Estrutura de Componentes**:
 
-## Code scaffolding
+src/app
+├── components/
+│ ├── header/
+├
+├─ features/tasks/
+├── components/
+│ ├── table/
+│ ├── tasks-cards/
+│ ├── tasks-form/
+│ ├── task-cards-view/
+│ ├── tasks-list/
+├
+├── services/
+│ └── tasks.service.ts
+├
+├── validators/
+│ └── date.validator.ts
+├
+├── task.model.ts/
+├── tasks-routing.module.ts/
+├── tasks.module.ts/
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ⚙️ Funcionalidades
+- **Cards View**: Exibição de tarefas em formato de cards, com título, descrição, status (checkbox) e data.
+- **Table View**: Tabela com ordenação (`matSort`), filtro e paginação (`matPaginator`).
+- **CRUD**: Criação e edição via `MatDialog`.
+- **Validações**:
+- Título: obrigatório, mínimo 3 caracteres.
+- Descrição: obrigatória, mínimo 5 caracteres.
+- Data: obrigatória, não pode ser anterior a hoje.
+- Status: obrigatório.
+- **Responsividade**: Layout ajusta entre cards e tabela de forma adaptável.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚀 Instalação e Execução
 
-## Running unit tests
+### Pré-requisitos
+- Node.js 18+
+- Angular CLI 15+
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Passos
+```bash
+# Instalar dependências
+npm install
 
-## Running end-to-end tests
+# Rodar json-server
+npm run start:api
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Rodar aplicação
+ng serve
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Abrir no navegador
+http://localhost:4200
